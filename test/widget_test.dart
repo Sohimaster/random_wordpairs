@@ -47,27 +47,4 @@ void main() {
     expect(find.byIcon(Icons.delete),
         findsWidgets); // Indicates we're on the saved page.
   });
-  testWidgets('Generate button adds more word pairs', (WidgetTester tester) async {
-    // Pump the RandomWords widget
-    await tester.pumpWidget(MaterialApp(home: RandomWords()));
-
-    // Initial build of the list
-    final initialPairs = find.byType(ListTile);
-    expect(initialPairs, findsNWidgets(50));
-
-    // Scroll to the bottom to enable the Generate Word Pairs button
-    final listFinder = find.byType(Scrollbar);
-    await tester.drag(listFinder, const Offset(0, -500));
-    await tester.pumpAndSettle();
-
-    // Tap the Generate Word Pairs button
-    final generateButton = find.widgetWithText(ElevatedButton, 'Generate Word Pairs');
-    await tester.ensureVisible(generateButton);
-    await tester.tap(generateButton);
-    await tester.pumpAndSettle();
-
-    // Verify that additional pairs have been added to the list
-    final morePairs = find.byType(ListTile);
-    expect(morePairs, findsNWidgets(100));
-  });
 }

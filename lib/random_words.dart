@@ -145,7 +145,7 @@ class RandomWordsState extends State<RandomWords> {
       _maxPairs = _maxPairs + _maxPairsConst;
       _buttonEnabled = false;
       _randomPairs.addAll(generateWordPairs()
-          .take(_maxPairs)
+          .take(_maxPairsConst)
           .map((wordPair) => Pair(wordPair.first, wordPair.second)));
     });
   }
