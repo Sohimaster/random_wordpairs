@@ -1,4 +1,4 @@
-name: first_app
+name: random_wordpairs
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   english_words: ^4.0.0
   path: ^1.9.0
-  sqflite: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
